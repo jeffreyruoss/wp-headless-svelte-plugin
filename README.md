@@ -17,15 +17,17 @@ It sets up a pretty URL at your-site.com/wphsp which can get changed in the main
 ## Production
 1. Run `npm run build` in the app directory
 
-## Local domain
-Need to hardcode your local domain into `VITE_WP_REST_DOMAIN` in `.env.local` for the WP REST requests to work on your localhost URL.
+## Configuration
+
+### Local domain
+When you use the localhost domain with npm run dev, the WP REST requests still need to be a non-locahost domain. To accomplish this hardcode your non-locahost domain into `VITE_WP_REST_DOMAIN` in `.env.local`.
 
 `.env.local`
 ```
 VITE_WP_REST_DOMAIN=https://my-local-domain.com
 ```
 
-## Configuration
+### Plugin base path
 If you change the base path of the plugin, you will need to update the base path in `vite.config.js`
 
 `vite.config.js`
@@ -41,4 +43,4 @@ export default defineConfig({
 ```
 
 ## Permalinks
-Probably need to resave permalinks in wp-admin: settings > permalinks
+Probably need to resave permalinks in wp-admin: settings > permalinks. (It sets up a pretty URL at your-site.com/wphsp)
